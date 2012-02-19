@@ -10,7 +10,7 @@
     "url": "https://github.com/lawrencec/aspectos.git"
   },
   "dependencies": {},
-  "main": ".aspectos.js",
+  "main": "src/aspectos.js",
   "ender": "noop"
 }
 
