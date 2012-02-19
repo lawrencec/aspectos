@@ -1,0 +1,16 @@
+{
+  "name": "aspectos",
+  "description": "Small and simple AOP library",
+  "version": "1.0.0",
+  "keywords": ["aspectos", "aop", "aspect", "ender"],
+  "homepage": "http://github.com/lawrencec/aspectos",
+  "authors": ["Lawrence Carvalho"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lawrencec/aspectos.git"
+  },
+  "dependencies": {},
+  "main": ".aspectos.js",
+  "ender": "noop"
+}
+
