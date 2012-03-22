@@ -29,22 +29,21 @@
             var origMethod = isFunction(method) ? method : target[method];
             return function() {
                 var rv = origMethod.apply(target || this, arguments);
-                return fn.apply(target || this, [rv]);
+                return fn.apply(target || this, arguments);
             };
         };
         //around
         var around = function(target,method,aFn) {
             var origMethod = isFunction(method) ? method : target[method];
-            return function() {
-                if (aFn && aFn.length == 2) {
+            return function(args) {
+                if (aFn && aFn.length === 2) {
                     aFn[0].apply(target || this, arguments);
                     var rv = origMethod.apply(target || this, arguments);
-                    return aFn[1].apply(target || this, [rv]);
+                    return aFn[1].apply(target || this, arguments);
                 }
                 else {
                     return origMethod.apply(target || this, arguments);
                 }
-
             };
         };
         return {
