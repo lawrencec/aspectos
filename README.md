@@ -2,6 +2,20 @@
 
 A simple library to provide basic AOP (Aspect Oriented Programming) functionality to your scripts.
 
+## Cloning
+
+The Jasmine testing framework is used for the tests and is added as a submodule.
+
+You can either clone this repo with the submodules in one command like so:
+
+    git clone REPO_URL --recursive
+
+or separately
+
+    git clone REPO_URL
+    <cd clonedrepo>
+    git submodule update --init --recursive
+
 ## Usage
 
 Aspectos provides three methods to provide the basic aspects to your objects:
