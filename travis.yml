@@ -6,7 +6,6 @@ python:
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+
   - sleep 5
-  - python -m SimpleHTTPServer &
-  - sleep 5
-script: phantomjs run-jasmine.js "http://localhost:8000/src/tests/index.html"
+script: phantomjs run-jasmine.js "file:///home/vagrant/src/tests/index.html"
