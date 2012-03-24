@@ -36,3 +36,4 @@ end
 desc 'Run JSHint checks against Javascript source'
 task :jshint => 'jshint:check'
 
+task :default => 'jasmine:ci'
