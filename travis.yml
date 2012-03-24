@@ -1,11 +1,11 @@
-language: python
-python:
-  - "2.7"
-  before_install:
+language: ruby
+rvm:
+  - 1.8.7
+  - 1.9.3
+before_install:
   - gem install jasmine
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-
   - sleep 5
 script: phantomjs run-jasmine.js "file:///home/vagrant/src/tests/index.html"
