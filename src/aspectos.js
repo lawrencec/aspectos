@@ -11,12 +11,22 @@
   else if (typeof define === 'function' && typeof define.amd === 'object') define(definition);
   else context[name] = definition(name, context);
 }('aspectos', this, function(name, context) {
+
     return function() {
-        var isFunction = function(fn) {
+        var isFunction,
+            isArray,
+            before,
+            after,
+            around;
+
+        isFunction = function(fn) {
             return (typeof fn === 'function');
         };
+        isArray = function(obj) {
+           return Object.prototype.toString.call(obj) === '[object Array]';
+        };
         // before
-        var before = function(target,method,fn) {
+        before = function(target,method,fn) {
             var origMethod = isFunction(method) ? method : target[method];
 
             return function() {
@@ -25,21 +35,40 @@
             };
         };
         //after
-        var after = function(target,method,fn) {
+        after = function(target,method,fn) {
             var origMethod = isFunction(method) ? method : target[method];
             return function() {
                 var rv = origMethod.apply(target || this, arguments);
-                return fn.apply(target || this, arguments);
+
+                return (rv) ?
+                    fn.apply(
+                        target || this,
+                        Array.prototype.slice.call(arguments).concat(
+                            (isArray(rv)) ? rv : [rv]))
+                    :
+                    fn.apply(
+                        target || this,
+                        Array.prototype.slice.call(arguments)
+                    );
             };
         };
         //around
-        var around = function(target,method,aFn) {
+        around = function(target,method,aFn) {
             var origMethod = isFunction(method) ? method : target[method];
             return function(args) {
                 if (aFn && aFn.length === 2) {
                     aFn[0].apply(target || this, arguments);
                     var rv = origMethod.apply(target || this, arguments);
-                    return aFn[1].apply(target || this, arguments);
+                    return (rv) ?
+                        aFn[1].apply(
+                            target || this,
+                            Array.prototype.slice.call(arguments).concat
+                                ((isArray(rv)) ? rv : [rv]))
+                            :
+                            aFn[1].apply(
+                                target || this,
+                                Array.prototype.slice.call(arguments)
+                            );
                 }
                 else {
                     return origMethod.apply(target || this, arguments);

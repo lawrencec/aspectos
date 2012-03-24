@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Aspectos Tests</title>
+
+    <script type="text/javascript" src="../../lib/ender.js"></script>
+    <script type="text/javascript" src="../../src/aspectos.js"></script>
+    <script type="text/javascript" src="../../lib/jasmine-1.2.rc1/lib/jasmine-core/jasmine.js"></script>
+    <script type="text/javascript" src="../../lib/jasmine-1.2.rc1/lib/jasmine-core/jasmine-html.js"></script>
+    <script type="text/javascript" src="./aspectos.js"></script>
+    <link rel="stylesheet" href="../../lib/jasmine-1.2.rc1/lib/jasmine-core/jasmine.css">
+</head>
+<body>
+
+<script type="text/javascript">
+
+    jasmine.getEnv().addReporter(new jasmine.HtmlReporter());
+    jasmine.getEnv().execute();
+</script>
+</body>
+</html>
