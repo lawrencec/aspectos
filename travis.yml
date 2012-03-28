@@ -1,9 +1,7 @@
-rvm:
-  - 1.9.3
-bundler_args: --without development
+language: node_js
+node_js:
+  - 0.6
 before_script:
-  - "git submodule update --init"
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - "rake clean"
-script: "rake jasmine:ci JASMINE_PORT=1337"
+script: phantomjs test/run-jasmine.js src/tests/index.html
