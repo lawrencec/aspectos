@@ -1,6 +1,7 @@
 namespace :jasmine do
     task :ci do
       require 'jasmine'
+      system("export DISPLAY=:99.0")
       load 'jasmine/tasks/jasmine.rake'
     ### rescue LoadError
     ###  task :jasmine do
