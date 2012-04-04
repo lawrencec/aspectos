@@ -1,7 +1,6 @@
 namespace :jasmine do
     task :ci do
       require 'jasmine'
-      system("export DISPLAY=:99.0")
       load 'jasmine/tasks/jasmine.rake'
     ### rescue LoadError
     ###  task :jasmine do
@@ -37,4 +36,11 @@ end
 desc 'Run JSHint checks against Javascript source'
 task :jshint => 'jshint:check'
 
+task :travis do
+  ["rake jasmine:ci"].each do |cmd|
+    puts "Starting to run #{cmd}..."
+    system("export DISPLAY=:99.0 && bundle exec #{cmd}")
+    raise "#{cmd} failed!" unless $?.exitstatus == 0
+  end
+end
 task :default => 'jasmine:ci'
