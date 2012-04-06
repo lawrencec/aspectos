@@ -1,4 +1,5 @@
-# Aspectos
+# Aspectos [![Build Status](https://secure.travis-ci.org/lawrencec/aspectos.png)](http://travis-ci.org/lawrencec/aspectos)
+
 
 A simple library to provide basic AOP (Aspect Oriented Programming) functionality to your scripts.
 
