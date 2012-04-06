@@ -1,9 +1,9 @@
 rvm:
   - 1.9.3
-bundler_args: --without development
 before_script:
   - "git submodule update --init"
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - "rake clean"
-script: "rake jasmine:ci JASMINE_PORT=1337"
+  - bundle exec rackup &
+  - sleep 5
+script: phantomjs run_jasmine_test.coffee "http://localhost:9292/src/tests/index.html"
