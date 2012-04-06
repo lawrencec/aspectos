@@ -7,4 +7,4 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - bundle exec rackup &
   - sleep 5
-script: phantomjs run_jasmine_test.coffee "http://localhost:9292/index.html"
+script: phantomjs run_jasmine_test.coffee "http://localhost:9292/src/tests/index.html"
