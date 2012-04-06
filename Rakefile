@@ -43,4 +43,9 @@ task :travis do
     raise "#{cmd} failed!" unless $?.exitstatus == 0
   end
 end
-task :default => 'jasmine:ci'
+
+desc "none"
+task :none do
+end
+
+task :default => 'none'
