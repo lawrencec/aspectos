@@ -1,7 +1,9 @@
 # Aspectos [![Build Status](https://secure.travis-ci.org/lawrencec/aspectos.png)](http://travis-ci.org/lawrencec/aspectos)
 
 
-A simple library to provide basic AOP (Aspect Oriented Programming) functionality to your scripts.
+A simple library to provide basic AOP (Aspect Oriented Programming) functionality to your scripts. It allows one to decorate
+methods and functions with behaviours that are run either before, after or around (before and after) the decorated
+method or function.
 
 ## Cloning
 
