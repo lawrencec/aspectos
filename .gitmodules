@@ -1,3 +1,6 @@
 [submodule "lib/jasmine"]
 	path = lib/jasmine
 	url = https://github.com/pivotal/jasmine.git
+[submodule "lib/ender"]
+	path = lib/ender
+	url = https://github.com/ender-js/Ender.git
