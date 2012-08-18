@@ -23,7 +23,7 @@ describe('Aspectos basic behaviour', function() {
             testValue += '1';
         });
         testObject.write();
-        expect(testValue).toBe('1 2');
+        expect(testValue).to.equal('1 2');
     });
 
     it('applies "after" aspect correctly', function() {
@@ -36,7 +36,7 @@ describe('Aspectos basic behaviour', function() {
             testValue += ' 2';
         });
         testObject.write();
-        expect(testValue).toBe('1 2');
+        expect(testValue).to.equal('1 2');
     });
 
     it('applies "around" aspect correctly', function() {
@@ -58,7 +58,7 @@ describe('Aspectos basic behaviour', function() {
             ]
         );
         testObject.write();
-        expect(testValue).toBe('1 2');
+        expect(testValue).to.equal('1 2');
     });
 
     it('when "before" must pass through original arguments correctly', function() {
@@ -76,7 +76,7 @@ describe('Aspectos basic behaviour', function() {
 
         );
         testObject.write('text');
-        expect(testValue).toBe('texttext');
+        expect(testValue).to.equal('texttext');
     });
 
     it('when "after" must pass through original arguments correctly', function() {
@@ -94,7 +94,7 @@ describe('Aspectos basic behaviour', function() {
 
         );
         testObject.write('text');
-        expect(testValue).toBe('texttext');
+        expect(testValue).to.equal('texttext');
     });
 
     it('when "around" must pass through original arguments correctly', function() {
@@ -116,7 +116,7 @@ describe('Aspectos basic behaviour', function() {
             ]
         );
         testObject.write('text');
-        expect(testValue).toBe('texttexttext');
+        expect(testValue).to.equal('texttexttext');
     });
 
     it('"after" must receive original return values correctly', function() {
@@ -136,7 +136,7 @@ describe('Aspectos basic behaviour', function() {
 
         );
         testObject.write('text');
-        expect(testValue).toBe('texttextTEXT');
+        expect(testValue).to.equal('texttextTEXT');
     });
 
     it('"around" must receive original return values correctly', function() {
@@ -161,6 +161,6 @@ describe('Aspectos basic behaviour', function() {
             ]
         );
         testObject.write('text');
-        expect(testValue).toBe('texttexttextTEXT');
+        expect(testValue).to.equal('texttexttextTEXT');
     });
 });

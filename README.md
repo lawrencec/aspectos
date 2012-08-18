@@ -77,3 +77,16 @@ Aspectos provides three methods to provide the basic aspects to your objects:
 ## Tests
 
 See the index.html file in the tests directory
+
+If you have testem installed run it from the root directory of the repo.
+
+    testem
+
+or
+
+
+    testem ci -b Chrome
+
+Mocha tests can be run with phantomjs (note the ci hash parameter):
+
+    phantomjs ./lib/test-helpers/run-mocha.js file://localhost/$(pwd)/aspectos/src/tests/index.html#ci
