@@ -1,6 +1,9 @@
-[submodule "lib/jasmine"]
-	path = lib/jasmine
-	url = https://github.com/pivotal/jasmine.git
 [submodule "lib/ender"]
 	path = lib/ender
 	url = https://github.com/ender-js/Ender.git
+[submodule "lib/mocha"]
+	path = lib/mocha
+	url = git://github.com/visionmedia/mocha.git
+[submodule "lib/chai"]
+	path = lib/chai
+	url = git://github.com/chaijs/chai.git

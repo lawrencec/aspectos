@@ -1,10 +1,7 @@
+language: ruby
 rvm:
   - 1.9.3
-bundler_args: --without development
-before_script:
-  - "git submodule update --init"
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - bundle exec rackup &
-  - sleep 5
-script: phantomjs ./lib/test-helpers/run_jasmine_test.coffee "http://localhost:9292/src/tests/index.html"
+notifications:
+  email: false
+script:
+  - "phantomjs ./lib/test-helpers/run-mocha.js file://localhost/$(pwd)/src/tests/index.html#ci"

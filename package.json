@@ -1,7 +1,7 @@
 {
   "name": "aspectos",
   "description": "Small and simple AOP library",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": ["aspectos", "aop", "aspect", "ender"],
   "homepage": "http://github.com/lawrencec/aspectos",
   "authors": ["Lawrence Carvalho"],
